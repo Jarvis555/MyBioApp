@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-router.get('/', function(req, res, next) {
+router.get('/test', function(req, res, next) {
   res.render('post', {});
 });
 
@@ -49,5 +49,24 @@ router.post('/math', function(req, res, next) {
     operator: op,
     mathResult: answer
   });
+});
+
+router.post('/compare', function(req, res, next) {
+  let num3 = req.body.number3 | 0;
+  let num4 = req.body.number4 | 0;
+  let result;
+
+  if(num3 > num4){
+    result = `${num3} is the higher`;
+  }
+  else{
+    result = `${num4} is the higher`;
+  }
+
+  res.render('test', { 
+    number3: num3,
+    number4: num4,
+    compareResult: result
+ });
 });
 module.exports = router;
