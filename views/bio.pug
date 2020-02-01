@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1= title
+    h1= date
+    p= 'This is my Bio page.'
+    p My name is #{Name}
+    p I was born on #{DOB} in #{birthCity}
+    p I live at #{address}
+    p I graduate from #{school}
+    p My favorite color is #{favoriteColor}
+    p My hobbies is #{hobbies}
+    a(href='/') Home
