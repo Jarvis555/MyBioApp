@@ -178,4 +178,17 @@ router.post('/temp', function (req, res, next) {
 
   });
 });
+router.post('/todo', function (req, res, next) {
+  let activity1 = req.body.activity;
+  let act = req.body.action;
+  let len = req.body.time | 0;
+
+  res.render('test', {
+    activity: activity1,
+    action: act,
+    time: len,
+ 
+  });
+});
+
 module.exports = router;
